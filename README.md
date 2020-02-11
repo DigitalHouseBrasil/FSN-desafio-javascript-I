@@ -5,27 +5,27 @@
 
  O desafio consiste na criação de um sistema para atender o gerenciamento de uma escola. Será desenvolvido funções como registro de alunos, matriculas e afins.
 
- O sistema deverá ser elaborado utilizando a linguagem  Javascript, se atentando aos padrões de desenvolvimento como, por exemplo, a utilização do cammel-Case. Todos prints ou exibições deverão acontecer diretamente no console.
+ O sistema deverá ser elaborado utilizando a linguagem  Javascript, se atentando aos padrões de desenvolvimento como, por exemplo, a utilização do camelCase. Todos os prints ou exibições deverão acontecer diretamente no console.
 
  ### Forma de entrega
- Você deverá fazer um fork desse projeto, e fazer o desenvolvimento dentro do mesmo. Após isso, deverá enviar o link do SEU repositório contendo o desenvolvimento do seu projeto para o meio de comunicação escolhido, para o professor.
+ Você deverá fazer um fork desse projeto, e fazer o desenvolvimento dentro do mesmo. Após isso, deverá enviar para o professor o link do *SEU* repositório. Se atente para enviar pelo meio de comunicação escolhido para a turma.
 
  Para mais informações de como fazer um fork:
  <http://gabsferreira.com/forkando-e-clonando-um-repositorio-no-github>
 
- Além disso, esse exercício deverá ser feito de forma individual, com isso, poderemos avaliar sua evolução no curso, e proporcionar a você uma auto-avaliação.
+ Além disso, esse exercício deverá ser feito de forma individual poderemos avaliar sua evolução no curso, e proporcionar a você uma auto-avaliação.
 
 
  ### O que deverá ser desenvolvido?
 
- Dentro do arquivo `index.js` desse repositório, contém uma lista de alunos base. Em nosso sistema um aluno é descrito com as seguintes informações:
+ Dentro do arquivo `index.js` desse repositório, há uma lista de alunos base. Em nosso sistema, um aluno é descrito com as seguintes informações:
 
   - Nome
   - Curso
   - Faltas
   - Notas
 
-  Onde um curso é descrito como:
+  Em que um curso é descrito como:
 
   - Nome do curso
   - Data de Matricula
@@ -72,9 +72,9 @@
    ```
 
 ### Links utéis
-  [Documentação JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
-  [Dicas de Map, Filter e Reduce](https://desenvolvimentoparaweb.com/javascript/map-filter-reduce-javascript/)
-  [Objetos Literais JS](https://tableless.com.br/javascript-objetos-literais-vs-funcoes-construtoras/)
+   - [Documentação JS](https://developer.mozilla.org/pt-BR/docs/Web/JavaScript)
+   - [Dicas de Map, Filter e Reduce](https://desenvolvimentoparaweb.com/javascript/map-filter-reduce-javascript/)
+   - [Objetos Literais JS](https://tableless.com.br/javascript-objetos-literais-vs-funcoes-construtoras/)
 
 
 
