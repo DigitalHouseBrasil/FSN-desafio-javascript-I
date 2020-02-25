@@ -76,7 +76,7 @@ function listarAlunos(){
             console.log('  * Cursando: ')
             for(curso of aluno.cursos){
                 console.log("    - " + curso.nomeDoCurso + " - matriculado em "+
-                    curso.dataMatricula.toLocaleString('pt-BR', { timeZone: 'UTC' })
+                    curso.dataMatricula.toLocaleString('pt-BR')
                 )
             }
         }else {  
