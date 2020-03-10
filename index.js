@@ -62,8 +62,7 @@ function adicionarAluno(nome){
         console.log(`Ocorreu um erro ao adicionar o aluno ${nome}`)
     }
 }
-adicionarAluno('Xpto');
-// adicionarAluno('Xpto');
+
 
 function listarAlunos(){
     /*Com essa função o usuário poderá ver todos os alunos cadastrados atualmente no sistema. 
@@ -97,15 +96,13 @@ function listarAlunos(){
     }
 }
 
-// listarAlunos()
-
 function buscarAluno(nome){
 //     /* Por meio dessa função, podemos pesquisar um aluno por nome na lista de aluno. 
 //     Ela deverá exibir um feedback, tanto para quando encontrar o aluno, tanto quando não 
 //     encontrar. E deverá devolver um aluno em seu retorno. */
     
     const resultado = alunosDaEscola.filter(aluno => aluno.nome.includes(nome))
-    console.log(resultado)
+    // console.log(resultado)
     if(resultado.length>0) {
         console.log(`Aluno ${nome} encontrado...`)
         return resultado[0]
@@ -114,10 +111,6 @@ function buscarAluno(nome){
         return false
     }   
 }
-
-console.log(buscarAluno('ximbo'))
-
-
 
 function matricularAluno(aluno, curso){
     /* Essa funcionalidade irá permitir, cadastrar um aluno em um curso. 
@@ -148,10 +141,6 @@ function matricularAluno(aluno, curso){
     }
 }
 
-console.log(matricularAluno(buscarAluno('Xpto'),"UX"))
-console.log(matricularAluno(buscarAluno('Xpto'),"DataAnalytics"))
-
-
 function aplicarFalta(aluno){
     // aluno:object
     /*
@@ -161,19 +150,17 @@ function aplicarFalta(aluno){
      em um curso.
     */
    if(typeof aluno === 'object' && aluno.cursos.length>0){
-       console.log('Aplicando Falta')
-       aluno.faltas++
-       console.log(`Registrada falta para o aluno ${aluno.nome}. Agora possui ${aluno.faltas} faltas `)
+    //    console.log('Aplicando Falta')
+       aluno.faltas++;
+       console.log(`Registrada falta para o aluno ${aluno.nome}. Agora possui ${aluno.faltas} faltas `);
        return true
    } else {
-    console.log("Dados informados incorretos")
+    console.log("Dados informados incorretos");
     return false
    }
 }
 
-aplicarFalta(buscarAluno('Xpto'))
-
-function aplicarNota(aluno){
+function aplicarNota(aluno, nota){
     // aluno:object
     /*
      Ao receber um aluno devidamente cadastrado em nossa lista. Você deverá 
@@ -181,6 +168,15 @@ function aplicarNota(aluno){
      feedback ao concluir a tarefa. Só poderá aplicar nota em aluno se o mesmo 
      tiver matriculado em um curso.
     */
+   if(typeof aluno === 'object' && aluno.cursos.length>0){
+    //    console.log('Aplicando Falta')
+       aluno.notas.push(nota);
+       console.log(`Registrada nota para o aluno ${aluno.nome}`)
+       return true
+   } else {
+    console.log("Dados informados incorretos")
+    return false
+   }
 }
 
 function aprovarAluno(aluno){
@@ -191,6 +187,32 @@ function aprovarAluno(aluno){
     3 faltas e média 7 em notas.
     Só o aluno só poderá ser aprovado se o mesmo tiver matriculado em um curso.
     */
+   if(typeof aluno === 'object' && aluno.cursos.length>0){
+       if(aluno.notas.length === 0){
+           console.log(`aluno ${aluno.nome} não tem notas a serem processadas`)
+       } else if (aluno.faltas < 3 && aluno.notas.reduce((soma,nota,idx,arr) =>
+           soma+nota/arr.length,0) >= 7){
+               console.log(`Aluno ${aluno.nome} aprovado!`)
+               aluno.aprovado = true;
+               return true
+       } else {
+           console.log(`Aluno ${aluno.nome} reprovado`)
+           aluno.aprovado = false;
+           return false
+
+       }
+   }
 }
 
-console.log(listarAlunos())
+// execução
+adicionarAluno('Xpto');
+listarAlunos();
+buscarAluno('ximbo');
+
+const dadosAluno=buscarAluno('Xpto');
+matricularAluno(dadosAluno,"UX");
+matricularAluno(dadosAluno,"DataAnalytics");
+aplicarNota(dadosAluno, 9.6);
+aplicarFalta(dadosAluno);
+aprovarAluno(dadosAluno);
+// listarAlunos('Guilherme'))
